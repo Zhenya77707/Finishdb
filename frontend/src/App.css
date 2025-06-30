@@ -1,38 +1,168 @@
-.App {
-    text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Glass Morphism Effects */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.glass-card-dark {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Custom Gradient Text */
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Pulse Animation for Call Button */
+.pulse-animation {
+  animation: pulse 2s infinite;
 }
 
-.App-link {
-    color: #61dafb;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced Button Styles */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Custom Card Hover Effects */
+.glass-card:hover {
+  @apply bg-white/90 shadow-2xl;
+  transform: translateY(-4px);
+}
+
+.glass-card-dark:hover {
+  @apply bg-white/20 shadow-2xl;
+  transform: translateY(-4px);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Focus States for Accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation Delays for Staggered Effects */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Enhanced Mobile Experience */
+@media (max-width: 768px) {
+  .glass-card {
+    @apply mx-2;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    @apply bg-gray-800/80;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .glass-card {
+    @apply border-2 border-gray-900;
+  }
+  
+  .text-gradient {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #1e40af;
+  }
 }
