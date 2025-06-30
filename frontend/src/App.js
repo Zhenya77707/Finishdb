@@ -23,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50">
       
       {/* Floating Call Button */}
       <div className="fixed bottom-6 right-6 z-50">
@@ -48,17 +48,39 @@ const App = () => {
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">DentaClinic</h1>
+                <h1 className="text-xl font-bold text-gray-900">Dental Studio</h1>
                 <p className="text-sm text-gray-600">Стоматологический кабинет</p>
               </div>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors">Услуги</button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">О нас</button>
-              <button onClick={() => scrollToSection('schedule')} className="text-gray-700 hover:text-blue-600 transition-colors">Время работы</button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">Контакты</button>
+            {/* Desktop Navigation - горизонтальная */}
+            <nav className="hidden md:block">
+              <div className="flex items-center space-x-1 bg-white/80 backdrop-blur-md rounded-full px-2 py-1 shadow-lg border border-white/20">
+                <button 
+                  onClick={() => scrollToSection('services')} 
+                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
+                >
+                  Услуги
+                </button>
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
+                >
+                  О нас
+                </button>
+                <button 
+                  onClick={() => scrollToSection('schedule')} 
+                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
+                >
+                  Время работы
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
+                >
+                  Контакты
+                </button>
+              </div>
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
@@ -67,7 +89,7 @@ const App = () => {
               </a>
               <button
                 onClick={callPhone}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
               >
                 Записаться
               </button>
@@ -155,7 +177,7 @@ const App = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-white to-blue-50">
+      <section id="services" className="py-20 bg-gradient-to-br from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -261,7 +283,7 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -333,7 +355,7 @@ const App = () => {
       </section>
 
       {/* Schedule Section */}
-      <section id="schedule" className="py-20 bg-gradient-to-br from-white to-blue-50">
+      <section id="schedule" className="py-20 bg-gradient-to-br from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -405,7 +427,7 @@ const App = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -591,7 +613,7 @@ const App = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">DentaClinic</h3>
+                  <h3 className="text-xl font-bold">Dental Studio</h3>
                   <p className="text-gray-400 text-sm">Стоматологический кабинет</p>
                 </div>
               </div>
@@ -623,7 +645,7 @@ const App = () => {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2025 DentaClinic. Все права защищены.
+              © 2025 Dental Studio. Все права защищены.
             </p>
           </div>
         </div>
