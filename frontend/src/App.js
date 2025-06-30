@@ -5,6 +5,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFloatingMenuOpen, setIsFloatingMenuOpen] = useState(false);
+  const [visitCount, setVisitCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,22 @@ const App = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Счётчик посещений
+    const today = new Date().toDateString();
+    const lastVisit = localStorage.getItem('lastVisit');
+    let currentCount = parseInt(localStorage.getItem('visitCount') || '1247', 10);
+    
+    // Если новый день или первое посещение
+    if (lastVisit !== today) {
+      currentCount += Math.floor(Math.random() * 3) + 1; // +1-3 посещения
+      localStorage.setItem('visitCount', currentCount.toString());
+      localStorage.setItem('lastVisit', today);
+    }
+    
+    setVisitCount(currentCount);
   }, []);
 
   const scrollToSection = (sectionId) => {
