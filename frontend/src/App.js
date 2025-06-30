@@ -44,49 +44,83 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50">
       
-      {/* Floating Social Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* Phone Button */}
-        <button
-          onClick={() => {
-            console.log('Floating button clicked');
-            callPhone();
-          }}
-          className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-blue-500/25 pulse-animation group"
-          title="Позвонить"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-          </svg>
-        </button>
-
+      {/* Floating Expandable Menu */}
+      <div className="fixed bottom-6 right-6 z-50">
         {/* Instagram Button */}
-        <button
-          onClick={() => {
-            // Замените на вашу ссылку Instagram
-            window.open('https://instagram.com/dental_studio_mozyr', '_blank');
-          }}
-          className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-pink-500/25 group"
-          title="Instagram"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </button>
+        <div className={`absolute bottom-20 right-0 transform transition-all duration-300 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+          <button
+            onClick={() => {
+              window.open('https://instagram.com/dental_studio_mozyr', '_blank');
+              setIsFloatingMenuOpen(false);
+            }}
+            className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-3 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-pink-500/25 group"
+            title="Instagram"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </button>
+        </div>
 
         {/* Viber Button */}
+        <div className={`absolute bottom-36 right-0 transform transition-all duration-300 delay-75 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+          <button
+            onClick={() => {
+              window.open('viber://chat?number=%2B375295626555', '_blank');
+              setIsFloatingMenuOpen(false);
+            }}
+            className="bg-gradient-to-r from-purple-500 to-purple-700 text-white p-3 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-purple-500/25 group"
+            title="Viber"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13.896 2.036C15.867 2.16 19.094 2.708 21.154 5.506c1.375 1.868 1.852 4.576 1.959 7.179.013.315-.238.58-.551.579-.314-.001-.567-.267-.58-.581-.099-2.398-.544-4.813-1.762-6.442-1.797-2.402-4.648-2.89-6.373-3.002-1.546-.1-3.119-.049-4.672.133-.313.037-.601-.192-.638-.505-.037-.313.192-.601.505-.638C10.647 2.123 12.291 2.073 13.896 2.036zM12.002 4.589c3.452.149 6.445 2.19 7.618 5.344.426 1.145.573 2.375.568 3.596-.002.314-.258.567-.572.565-.314-.002-.567-.258-.565-.572.005-1.107-.129-2.194-.499-3.208-1.069-2.875-3.724-4.6-6.867-4.727-.313-.013-.557-.277-.544-.59.013-.313.276-.556.589-.544l.272.016zM12.152 7.135c2.103.139 4.01 1.479 4.722 3.562.234.684.305 1.398.304 2.106-.001.314-.256.568-.57.567-.314-.001-.568-.256-.567-.57.001-.608-.06-1.221-.261-1.816-.609-1.777-2.236-2.921-4.029-3.041-.314-.021-.554-.293-.533-.607.021-.314.293-.554.607-.533l.327.032zM12.002 9.693c1.253.088 2.406.956 2.814 2.197.134.408.169.836.168 1.262-.001.314-.256.568-.57.567-.314-.001-.568-.256-.567-.57.001-.366-.03-.733-.141-1.086-.349-1.067-1.339-1.811-2.417-1.872-.314-.018-.555-.289-.537-.603.018-.314.289-.555.603-.537l.647.042zM4.867 10.113c.847-.421 1.694-.842 2.541-1.263.424-.211.946-.031 1.263.348.475.568.95 1.136 1.425 1.704.316.378.396.914.189 1.368-.31.68-.62 1.36-.93 2.04-.207.454-.086.992.28 1.358.549.549 1.098 1.098 1.647 1.647.366.366.904.487 1.358.28.68-.31 1.36-.62 2.04-.93.454-.207.99-.127 1.368.189.568.475 1.136.95 1.704 1.425.379.317.559.839.348 1.263-.421.847-.842 1.694-1.263 2.541-.281.566-.85.927-1.454.927C7.326 23.007 0.993 16.674.993 9.618c0-.604.361-1.173.927-1.454l2.947-1.051z"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Phone Button */}
+        <div className={`absolute bottom-20 right-0 transform transition-all duration-300 delay-150 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+          <button
+            onClick={() => {
+              console.log('Phone button clicked');
+              callPhone();
+              setIsFloatingMenuOpen(false);
+            }}
+            className="bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-green-500/25 group"
+            title="Позвонить"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Main Toggle Button */}
         <button
-          onClick={() => {
-            // Замените номер на ваш
-            window.open('viber://chat?number=%2B375295626555', '_blank');
-          }}
-          className="bg-gradient-to-r from-purple-500 to-purple-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-purple-500/25 group"
-          title="Viber"
+          onClick={() => setIsFloatingMenuOpen(!isFloatingMenuOpen)}
+          className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-blue-500/25 ${isFloatingMenuOpen ? '' : 'pulse-animation'}`}
+          title={isFloatingMenuOpen ? "Закрыть меню" : "Связаться с нами"}
         >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M13.896 2.036C15.867 2.16 19.094 2.708 21.154 5.506c1.375 1.868 1.852 4.576 1.959 7.179.013.315-.238.58-.551.579-.314-.001-.567-.267-.58-.581-.099-2.398-.544-4.813-1.762-6.442-1.797-2.402-4.648-2.89-6.373-3.002-1.546-.1-3.119-.049-4.672.133-.313.037-.601-.192-.638-.505-.037-.313.192-.601.505-.638C10.647 2.123 12.291 2.073 13.896 2.036zM12.002 4.589c3.452.149 6.445 2.19 7.618 5.344.426 1.145.573 2.375.568 3.596-.002.314-.258.567-.572.565-.314-.002-.567-.258-.565-.572.005-1.107-.129-2.194-.499-3.208-1.069-2.875-3.724-4.6-6.867-4.727-.313-.013-.557-.277-.544-.59.013-.313.276-.556.589-.544l.272.016zM12.152 7.135c2.103.139 4.01 1.479 4.722 3.562.234.684.305 1.398.304 2.106-.001.314-.256.568-.57.567-.314-.001-.568-.256-.567-.57.001-.608-.06-1.221-.261-1.816-.609-1.777-2.236-2.921-4.029-3.041-.314-.021-.554-.293-.533-.607.021-.314.293-.554.607-.533l.327.032zM12.002 9.693c1.253.088 2.406.956 2.814 2.197.134.408.169.836.168 1.262-.001.314-.256.568-.57.567-.314-.001-.568-.256-.567-.57.001-.366-.03-.733-.141-1.086-.349-1.067-1.339-1.811-2.417-1.872-.314-.018-.555-.289-.537-.603.018-.314.289-.555.603-.537l.647.042zM4.867 10.113c.847-.421 1.694-.842 2.541-1.263.424-.211.946-.031 1.263.348.475.568.95 1.136 1.425 1.704.316.378.396.914.189 1.368-.31.68-.62 1.36-.93 2.04-.207.454-.086.992.28 1.358.549.549 1.098 1.098 1.647 1.647.366.366.904.487 1.358.28.68-.31 1.36-.62 2.04-.93.454-.207.99-.127 1.368.189.568.475 1.136.95 1.704 1.425.379.317.559.839.348 1.263-.421.847-.842 1.694-1.263 2.541-.281.566-.85.927-1.454.927C7.326 23.007 0.993 16.674.993 9.618c0-.604.361-1.173.927-1.454l2.947-1.051z"/>
+          <svg 
+            className={`w-6 h-6 transform transition-transform duration-300 ${isFloatingMenuOpen ? 'rotate-45' : 'rotate-0'}`} 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            {isFloatingMenuOpen ? (
+              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
+            ) : (
+              <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd"/>
+            )}
           </svg>
         </button>
+
+        {/* Background overlay when menu is open */}
+        {isFloatingMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm -z-10"
+            onClick={() => setIsFloatingMenuOpen(false)}
+          ></div>
+        )}
       </div>
 
       {/* Header */}
