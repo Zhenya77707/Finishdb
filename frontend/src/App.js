@@ -19,7 +19,25 @@ const App = () => {
   };
 
   const callPhone = () => {
-    window.location.href = 'tel:+375295626555';
+    // Проверяем, поддерживает ли устройство телефонные ссылки
+    const phoneNumber = '+375295626555';
+    console.log('Attempting to call:', phoneNumber);
+    
+    // Для мобильных устройств
+    if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      // Для десктопа - показываем номер или копируем в буфер
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+          alert(`Номер телефона скопирован: ${phoneNumber}`);
+        }).catch(() => {
+          alert(`Позвоните по номеру: ${phoneNumber}`);
+        });
+      } else {
+        alert(`Позвоните по номеру: ${phoneNumber}`);
+      }
+    }
   };
 
   return (
