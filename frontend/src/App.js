@@ -49,8 +49,8 @@ const App = () => {
         {/* Telegram Button - Position 1 (top-left) */}
         <div className={`absolute transform transition-all duration-500 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
              style={{
-               bottom: isFloatingMenuOpen ? '80px' : '0px',
-               right: isFloatingMenuOpen ? '80px' : '0px'
+               bottom: isFloatingMenuOpen ? '70px' : '0px',
+               right: isFloatingMenuOpen ? '60px' : '0px'
              }}>
           <button
             onClick={() => {
@@ -69,7 +69,7 @@ const App = () => {
         {/* Instagram Button - Position 2 (top) */}
         <div className={`absolute transform transition-all duration-500 delay-75 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
              style={{
-               bottom: isFloatingMenuOpen ? '100px' : '0px',
+               bottom: isFloatingMenuOpen ? '85px' : '0px',
                right: isFloatingMenuOpen ? '20px' : '0px'
              }}>
           <button
@@ -89,8 +89,8 @@ const App = () => {
         {/* Viber Button - Position 3 (top-right) */}
         <div className={`absolute transform transition-all duration-500 delay-150 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
              style={{
-               bottom: isFloatingMenuOpen ? '80px' : '0px',
-               right: isFloatingMenuOpen ? '-40px' : '0px'
+               bottom: isFloatingMenuOpen ? '70px' : '0px',
+               right: isFloatingMenuOpen ? '-20px' : '0px'
              }}>
           <button
             onClick={() => {
@@ -109,8 +109,8 @@ const App = () => {
         {/* Phone Button - Position 4 (right) */}
         <div className={`absolute transform transition-all duration-500 delay-225 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
              style={{
-               bottom: isFloatingMenuOpen ? '20px' : '0px',
-               right: isFloatingMenuOpen ? '-60px' : '0px'
+               bottom: isFloatingMenuOpen ? '25px' : '0px',
+               right: isFloatingMenuOpen ? '-40px' : '0px'
              }}>
           <button
             onClick={() => {
