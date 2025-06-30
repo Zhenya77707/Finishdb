@@ -790,11 +790,21 @@ const App = () => {
               </div>
             </div>
 
-            {/* Navigation buttons */}
+            {/* Navigation buttons with infinite scroll */}
             <button 
               onClick={() => {
                 const container = document.getElementById('testimonials-container');
-                container.scrollBy({ left: -320, behavior: 'smooth' });
+                const cardWidth = 320 + 24; // width + gap
+                const currentScroll = container.scrollLeft;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                
+                if (currentScroll <= 0) {
+                  // If at the beginning, go to end
+                  container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                } else {
+                  // Normal scroll left
+                  container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                }
               }}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-md text-gray-700 p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
             >
@@ -806,7 +816,17 @@ const App = () => {
             <button 
               onClick={() => {
                 const container = document.getElementById('testimonials-container');
-                container.scrollBy({ left: 320, behavior: 'smooth' });
+                const cardWidth = 320 + 24; // width + gap
+                const currentScroll = container.scrollLeft;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                
+                if (currentScroll >= maxScroll) {
+                  // If at the end, go to beginning
+                  container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                  // Normal scroll right
+                  container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
               }}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-md text-gray-700 p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
             >
