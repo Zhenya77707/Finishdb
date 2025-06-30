@@ -301,7 +301,10 @@ const App = () => {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300">
+            <div 
+              className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer"
+              onClick={() => scrollToSection('pricing-orthopedic')}
+            >
               <div className="bg-gradient-to-r from-purple-100 to-purple-200 p-4 rounded-xl mb-6 w-fit">
                 <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.894.553l2.991 5.982a.869.869 0 010 .778l-1.974 3.947a1 1 0 01-1.789 0L10.149 9.313a.87.87 0 010-.778l2.991-5.982A1 1 0 0112 2z" clipRule="evenodd"/>
