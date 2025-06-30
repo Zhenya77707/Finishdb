@@ -311,6 +311,175 @@ const App = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Стоимость <span className="text-gradient bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">услуг</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Прозрачные цены на качественное стоматологическое лечение
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Терапевтическая стоматология */}
+            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative">
+              <div className="text-center mb-6">
+                <div className="bg-gradient-to-r from-blue-100 to-blue-200 p-4 rounded-xl mb-4 w-fit mx-auto">
+                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Терапевтическая стоматология</h3>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Лечение кариеса</span>
+                  <span className="font-semibold text-blue-600">от 80 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Пломбирование</span>
+                  <span className="font-semibold text-blue-600">от 60 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Эндодонтическое лечение</span>
+                  <span className="font-semibold text-blue-600">от 120 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Лечение пульпита</span>
+                  <span className="font-semibold text-blue-600">от 150 руб.</span>
+                </div>
+              </div>
+
+              <button
+                onClick={callPhone}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-blue-500/25 font-semibold"
+              >
+                Записаться на прием
+              </button>
+            </div>
+
+            {/* Консервативная пародонтология */}
+            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative border-2 border-green-200">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  Популярно
+                </span>
+              </div>
+              
+              <div className="text-center mb-6">
+                <div className="bg-gradient-to-r from-green-100 to-green-200 p-4 rounded-xl mb-4 w-fit mx-auto">
+                  <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15.586 13H14a1 1 0 01-1-1z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Консервативная пародонтология</h3>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Лечение гингивита</span>
+                  <span className="font-semibold text-green-600">от 90 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Профессиональная чистка</span>
+                  <span className="font-semibold text-green-600">от 70 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Удаление зубного камня</span>
+                  <span className="font-semibold text-green-600">от 50 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Профилактика</span>
+                  <span className="font-semibold text-green-600">от 40 руб.</span>
+                </div>
+              </div>
+
+              <button
+                onClick={callPhone}
+                className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-green-500/25 font-semibold"
+              >
+                Записаться на прием
+              </button>
+            </div>
+
+            {/* Ортопедическая стоматология */}
+            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative">
+              <div className="text-center mb-6">
+                <div className="bg-gradient-to-r from-purple-100 to-purple-200 p-4 rounded-xl mb-4 w-fit mx-auto">
+                  <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.894.553l2.991 5.982a.869.869 0 010 .778l-1.974 3.947a1 1 0 01-1.789 0L10.149 9.313a.87.87 0 010-.778l2.991-5.982A1 1 0 0112 2z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Ортопедическая стоматология</h3>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Коронки керамические</span>
+                  <span className="font-semibold text-purple-600">от 300 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Мостовидные протезы</span>
+                  <span className="font-semibold text-purple-600">от 800 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Съемные протезы</span>
+                  <span className="font-semibold text-purple-600">от 400 руб.</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-700">Реставрация зубов</span>
+                  <span className="font-semibold text-purple-600">от 200 руб.</span>
+                </div>
+              </div>
+
+              <button
+                onClick={callPhone}
+                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-purple-500/25 font-semibold"
+              >
+                Записаться на прием
+              </button>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl border border-blue-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Важная информация</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div className="flex items-start space-x-3">
+                  <div className="bg-blue-100 p-2 rounded-lg">
+                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Консультация бесплатная</h4>
+                    <p className="text-gray-600 text-sm">При выполнении любого лечения консультация и осмотр не оплачиваются</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Гарантия качества</h4>
+                    <p className="text-gray-600 text-sm">Предоставляем гарантию на все виды лечения и протезирования</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6">
+                <p className="text-gray-500 text-sm">* Указанные цены являются базовыми. Окончательная стоимость определяется после консультации и осмотра.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
