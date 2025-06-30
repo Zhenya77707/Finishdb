@@ -363,7 +363,7 @@ const App = () => {
             </div>
 
             {/* Консервативная пародонтология */}
-            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative border-2 border-green-200">
+            <div id="pricing-parodont" className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative border-2 border-green-200">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Популярно
