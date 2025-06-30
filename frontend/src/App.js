@@ -46,8 +46,32 @@ const App = () => {
       
       {/* Floating Expandable Menu */}
       <div className="fixed bottom-6 right-6 z-50">
-        {/* Instagram Button */}
-        <div className={`absolute bottom-20 right-0 transform transition-all duration-300 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+        {/* Telegram Button - Position 1 (top-left) */}
+        <div className={`absolute transform transition-all duration-500 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+             style={{
+               bottom: isFloatingMenuOpen ? '80px' : '0px',
+               right: isFloatingMenuOpen ? '80px' : '0px'
+             }}>
+          <button
+            onClick={() => {
+              window.open('https://t.me/+375295626555', '_blank');
+              setIsFloatingMenuOpen(false);
+            }}
+            className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-3 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-blue-400/25 group"
+            title="Telegram"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Instagram Button - Position 2 (top) */}
+        <div className={`absolute transform transition-all duration-500 delay-75 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+             style={{
+               bottom: isFloatingMenuOpen ? '100px' : '0px',
+               right: isFloatingMenuOpen ? '20px' : '0px'
+             }}>
           <button
             onClick={() => {
               window.open('https://instagram.com/dental_studio_mozyr', '_blank');
@@ -62,8 +86,12 @@ const App = () => {
           </button>
         </div>
 
-        {/* Viber Button */}
-        <div className={`absolute bottom-36 right-0 transform transition-all duration-300 delay-75 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+        {/* Viber Button - Position 3 (top-right) */}
+        <div className={`absolute transform transition-all duration-500 delay-150 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+             style={{
+               bottom: isFloatingMenuOpen ? '80px' : '0px',
+               right: isFloatingMenuOpen ? '-40px' : '0px'
+             }}>
           <button
             onClick={() => {
               window.open('viber://chat?number=%2B375295626555', '_blank');
@@ -78,8 +106,12 @@ const App = () => {
           </button>
         </div>
 
-        {/* Phone Button */}
-        <div className={`absolute bottom-20 right-0 transform transition-all duration-300 delay-150 ${isFloatingMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-75 pointer-events-none'}`}>
+        {/* Phone Button - Position 4 (right) */}
+        <div className={`absolute transform transition-all duration-500 delay-225 ${isFloatingMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+             style={{
+               bottom: isFloatingMenuOpen ? '20px' : '0px',
+               right: isFloatingMenuOpen ? '-60px' : '0px'
+             }}>
           <button
             onClick={() => {
               console.log('Phone button clicked');
@@ -95,21 +127,22 @@ const App = () => {
           </button>
         </div>
 
-        {/* Main Toggle Button */}
+        {/* Main Toggle Button with Tooth Icon */}
         <button
           onClick={() => setIsFloatingMenuOpen(!isFloatingMenuOpen)}
           className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-blue-500/25 ${isFloatingMenuOpen ? '' : 'pulse-animation'}`}
           title={isFloatingMenuOpen ? "Закрыть меню" : "Связаться с нами"}
         >
           <svg 
-            className={`w-6 h-6 transform transition-transform duration-300 ${isFloatingMenuOpen ? 'rotate-45' : 'rotate-0'}`} 
+            className={`w-6 h-6 transform transition-transform duration-300 ${isFloatingMenuOpen ? 'rotate-180' : 'rotate-0'}`} 
             fill="currentColor" 
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
           >
             {isFloatingMenuOpen ? (
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/>
             ) : (
-              <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd"/>
+              // Tooth icon
+              <path d="M12 2C10.5 2 9.2 2.8 8.5 4.1C7.8 2.8 6.5 2 5 2C3.3 2 2 3.3 2 5C2 6.2 2.4 7.3 3.1 8.1C3.8 13.7 6.5 18.5 8.5 20.5C9.3 21.3 10.6 21.3 11.4 20.5C11.7 20.2 12.3 20.2 12.6 20.5C13.4 21.3 14.7 21.3 15.5 20.5C17.5 18.5 20.2 13.7 20.9 8.1C21.6 7.3 22 6.2 22 5C22 3.3 20.7 2 19 2C17.5 2 16.2 2.8 15.5 4.1C14.8 2.8 13.5 2 12 2ZM12 4C12.8 4 13.5 4.7 13.5 5.5S12.8 7 12 7S10.5 6.3 10.5 5.5S11.2 4 12 4Z"/>
             )}
           </svg>
         </button>
