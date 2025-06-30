@@ -139,7 +139,43 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Реализована стильная горизонтальная навигация в виде pill/таблетки с glassmorphism эффектом"
+        comment: "Изменена с таблетки на строчную навигацию с анимированным подчеркиванием"
+
+  - task: "Кнопки записи с улучшенной функциональностью"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Исправлена функция callPhone с поддержкой мобильных/десктоп устройств и отладкой"
+
+  - task: "Новое изображение оборудования"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Заменено изображение в разделе О нас на более современное белое оборудование"
+
+  - task: "Улучшенные фоны карточек"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Добавлены градиентные фоны к glass-card с более премиальным видом"
 
   - task: "Разделы услуг"
     implemented: true
