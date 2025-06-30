@@ -315,24 +315,6 @@ const App = () => {
                   Реставрация
                 </li>
               </ul>
-              
-              <div className="mt-6">
-                <button
-                  onClick={() => scrollToSection('pricing-orthopedic')}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-purple-500/25 font-semibold"
-                >
-                  Узнать стоимость
-                </button>
-              </div>
-              
-              <div className="mt-6">
-                <button
-                  onClick={() => scrollToSection('pricing-therapy')}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-blue-500/25 font-semibold"
-                >
-                  Узнать стоимость
-                </button>
-              </div>
             </div>
           </div>
         </div>
