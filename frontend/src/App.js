@@ -366,8 +366,8 @@ const App = () => {
             <div className="relative">
               <div className="glass-card p-8 rounded-2xl">
                 <img 
-                  src="https://images.pexels.com/photos/7723554/pexels-photo-7723554.jpeg" 
-                  alt="Итальянское стоматологическое оборудование" 
+                  src="https://images.pexels.com/photos/914912/pexels-photo-914912.jpeg" 
+                  alt="Современное стоматологическое оборудование" 
                   className="w-full h-64 object-cover rounded-xl mb-6"
                 />
                 <div className="space-y-4">
