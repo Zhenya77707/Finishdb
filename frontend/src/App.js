@@ -145,6 +145,7 @@ const App = () => {
               <div className="flex flex-col space-y-4">
                 <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">Услуги</button>
                 <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">О нас</button>
+                <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">Стоимость</button>
                 <button onClick={() => scrollToSection('schedule')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">Время работы</button>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors text-left">Контакты</button>
                 <div className="border-t pt-4">
