@@ -54,6 +54,16 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Hide scrollbar for horizontal testimonials slider */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Hover Effects */
 .hover-scale {
   transition: transform 0.3s ease-in-out;
