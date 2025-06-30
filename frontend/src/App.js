@@ -4,6 +4,7 @@ import './App.css';
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isFloatingMenuOpen, setIsFloatingMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
