@@ -108,7 +108,10 @@ const App = () => {
                 +375 29 562-65-55
               </a>
               <button
-                onClick={callPhone}
+                onClick={() => {
+                  console.log('Header button clicked');
+                  callPhone();
+                }}
                 className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
               >
                 Записаться
