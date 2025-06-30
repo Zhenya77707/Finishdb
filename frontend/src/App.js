@@ -46,7 +46,10 @@ const App = () => {
       {/* Floating Call Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <button
-          onClick={callPhone}
+          onClick={() => {
+            console.log('Floating button clicked');
+            callPhone();
+          }}
           className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transform transition-all duration-300 hover:shadow-blue-500/25 pulse-animation"
         >
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
