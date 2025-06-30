@@ -4,7 +4,7 @@
 
 /* Custom Glass Morphism Effects */
 .glass-card {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  @apply bg-gradient-to-br from-white/90 via-blue-50/50 to-slate-50/80 backdrop-blur-md border border-white/30 shadow-lg;
 }
 
 .glass-card-dark {
