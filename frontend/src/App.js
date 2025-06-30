@@ -407,7 +407,7 @@ const App = () => {
             </div>
 
             {/* Ортопедическая стоматология */}
-            <div className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative">
+            <div id="pricing-orthopedic" className="glass-card p-8 rounded-2xl hover:scale-105 transform transition-all duration-300 relative">
               <div className="text-center mb-6">
                 <div className="bg-gradient-to-r from-purple-100 to-purple-200 p-4 rounded-xl mb-4 w-fit mx-auto">
                   <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
