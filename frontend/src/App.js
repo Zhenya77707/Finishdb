@@ -176,7 +176,10 @@ const App = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
-                onClick={callPhone}
+                onClick={() => {
+                  console.log('Hero button clicked');
+                  callPhone();
+                }}
                 className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 w-full sm:w-auto"
               >
                 Записаться на прием
