@@ -680,72 +680,152 @@ const App = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass-card p-6 rounded-2xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  А
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">Анна Петрова</h4>
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    ))}
+          {/* Horizontal Testimonials Slider */}
+          <div className="relative">
+            <div 
+              id="testimonials-container"
+              className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
+              style={{scrollBehavior: 'smooth'}}
+            >
+              <div className="flex-shrink-0 w-80 glass-card p-6 rounded-2xl">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    А
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">Анна Петрова</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
                   </div>
                 </div>
+                <p className="text-gray-600">
+                  "Отличная клиника! Современное оборудование, профессиональные врачи. 
+                  Лечение прошло быстро и безболезненно. Рекомендую!"
+                </p>
               </div>
-              <p className="text-gray-600">
-                "Отличная клиника! Современное оборудование, профессиональные врачи. 
-                Лечение прошло быстро и безболезненно. Рекомендую!"
-              </p>
+
+              <div className="flex-shrink-0 w-80 glass-card p-6 rounded-2xl">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    М
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">Михаил Иванов</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "Очень доволен качеством обслуживания. Удобное расположение, 
+                  приятная атмосфера. Обязательно буду обращаться еще!"
+                </p>
+              </div>
+
+              <div className="flex-shrink-0 w-80 glass-card p-6 rounded-2xl">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    Е
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">Елена Козлова</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "Замечательная клиника с высоким уровнем сервиса. 
+                  Современное итальянское оборудование действительно делает разницу!"
+                </p>
+              </div>
+
+              <div className="flex-shrink-0 w-80 glass-card p-6 rounded-2xl">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    С
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">Сергей Николаев</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "Профессиональный подход, современное оборудование, комфортная атмосфера. 
+                  Особенно понравилось качество пломбирования."
+                </p>
+              </div>
+
+              <div className="flex-shrink-0 w-80 glass-card p-6 rounded-2xl">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    О
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">Ольга Васильева</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "Отличные врачи, современная диагностика, безболезненное лечение. 
+                  Рада, что нашла эту клинику в Мозыре!"
+                </p>
+              </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  М
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">Михаил Иванов</h4>
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                "Очень доволен качеством обслуживания. Удобное расположение, 
-                приятная атмосфера. Обязательно буду обращаться еще!"
-              </p>
-            </div>
+            {/* Navigation buttons */}
+            <button 
+              onClick={() => {
+                const container = document.getElementById('testimonials-container');
+                container.scrollBy({ left: -320, behavior: 'smooth' });
+              }}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-md text-gray-700 p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd"/>
+              </svg>
+            </button>
 
-            <div className="glass-card p-6 rounded-2xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  Е
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-gray-900">Елена Козлова</h4>
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-600">
-                "Замечательная клиника с высоким уровнем сервиса. 
-                Современное итальянское оборудование действительно делает разницу!"
-              </p>
-            </div>
+            <button 
+              onClick={() => {
+                const container = document.getElementById('testimonials-container');
+                container.scrollBy({ left: 320, behavior: 'smooth' });
+              }}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-md text-gray-700 p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+              </svg>
+            </button>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-500 text-sm">← Пролистайте отзывы →</p>
           </div>
         </div>
       </section>
