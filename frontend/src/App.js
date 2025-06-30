@@ -53,34 +53,36 @@ const App = () => {
               </div>
             </div>
 
-            {/* Desktop Navigation - горизонтальная */}
-            <nav className="hidden md:block">
-              <div className="flex items-center space-x-1 bg-white/80 backdrop-blur-md rounded-full px-2 py-1 shadow-lg border border-white/20">
-                <button 
-                  onClick={() => scrollToSection('services')} 
-                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
-                >
-                  Услуги
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
-                >
-                  О нас
-                </button>
-                <button 
-                  onClick={() => scrollToSection('schedule')} 
-                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
-                >
-                  Время работы
-                </button>
-                <button 
-                  onClick={() => scrollToSection('contact')} 
-                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300 text-sm font-medium"
-                >
-                  Контакты
-                </button>
-              </div>
+            {/* Desktop Navigation - в строчку */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative"
+              >
+                Услуги
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 hover:w-full"></span>
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative"
+              >
+                О нас
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 hover:w-full"></span>
+              </button>
+              <button 
+                onClick={() => scrollToSection('schedule')} 
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative"
+              >
+                Время работы
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 hover:w-full"></span>
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative"
+              >
+                Контакты
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 hover:w-full"></span>
+              </button>
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
